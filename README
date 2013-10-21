@@ -1,0 +1,11 @@
+To compile the project, do following commands:
+mkdir build
+cd build 
+cmake ..
+make
+
+To launch:
+cd build
+./qc reads.fq deviation out.fa
+python ../scripts/specify_contaminant.sh blast_db threads_num out.fa
+python ../scripts/remove_contaminant.py reads.fq sample_ref.fa.ind contaminant.fa.ind threads_num
